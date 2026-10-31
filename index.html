@@ -7,6 +7,74 @@
 <meta name="description" content="Muhammad Bashir Alizada — Computer Science Graduate specializing in Information Systems, Database Management, Project Coordination and Software Development.">
 <title>Muhammad Bashir Alizada | Professional Portfolio</title>
 
+ 
+/* Typing animation */
+.typing-line {
+  min-height: 65px;
+  font-size: clamp(17px, 2.5vw, 23px);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.cursor {
+  display: inline-block;
+  color: var(--accent);
+  animation: blink .7s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* Floating cards */
+.card, .skill-group, .language, .stat {
+  transition: transform .35s ease, box-shadow .35s ease,
+              border-color .35s ease;
+}
+
+.card:hover, .skill-group:hover, .language:hover, .stat:hover {
+  transform: translateY(-9px);
+  box-shadow: 0 18px 40px #38bdf425;
+  border-color: var(--accent);
+}
+
+/* Gentle floating photo */
+.photo-area {
+  animation: floatPhoto 5s ease-in-out infinite;
+}
+
+@keyframes floatPhoto {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* Animated gradient */
+.gradient {
+  background-size: 200% auto;
+  animation: gradientMove 4s linear infinite;
+}
+
+@keyframes gradientMove {
+  to { background-position: 200% center; }
+}
+
+/* Moving project cards */
+.project-card:nth-child(1) { animation: cardFloat 5s ease-in-out infinite; }
+.project-card:nth-child(2) { animation: cardFloat 6s ease-in-out infinite 1s; }
+.project-card:nth-child(3) { animation: cardFloat 5.5s ease-in-out infinite 2s; }
+
+@keyframes cardFloat {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .photo-area, .project-card, .gradient, .cursor {
+    animation: none !important;
+  }
+}
+
 <style>
 :root {
  --bg:#080e1c;--surface:#101a2c;--surface2:#17243a;
@@ -279,7 +347,11 @@ footer{
   <div class="hero-content">
    <div class="eyebrow"><span class="dot"></span> COMPUTER SCIENCE PROFESSIONAL</div>
    <h1>Muhammad Bashir <span class="gradient">Alizada</span></h1>
-   <h2>Information Systems | Database Management | Project Coordination</h2>
+   
+<h2 class="typing-line">
+  <span id="typing"></span><span class="cursor">|</span>
+</h2>
+
    <p>
     Computer Science graduate with a background in Information Systems
     and an interest in building organized, reliable and practical
@@ -351,6 +423,24 @@ footer{
    <p>MySQL, SQL, database design, tables and relationships,
    CRUD operations and data retrieval.</p>
   </article>
+  
+<article class="card">
+  <div class="card-icon">🌐</div>
+  <h3>Web Development</h3>
+  <p>
+    Frontend and backend web development using HTML,
+    CSS, JavaScript, React.js, PHP and Laravel.
+    Focused on responsive interfaces, application
+    development and practical digital solutions.
+  </p>
+  <div class="tags">
+    <span class="tag">Frontend</span>
+    <span class="tag">Backend</span>
+    <span class="tag">React.js</span>
+    <span class="tag">Laravel</span>
+  </div>
+</article>
+
   <article class="card">
    <div class="card-icon">💻</div>
    <h3>Software Engineering</h3>
@@ -603,6 +693,55 @@ if ("IntersectionObserver" in window) {
 } else {
  document.querySelectorAll(".reveal").forEach(el=>el.classList.add("show"));
 }
+ 
+// Professional typing animation
+const typingElement = document.getElementById("typing");
+
+const titles = [
+  "Web Development Specialist",
+  "Full-Stack Web Developer",
+  "Database Management Professional",
+  "Information Systems Graduate",
+  "Project Management & Coordination",
+  "Software Development Enthusiast",
+  "Data & Systems Analyst"
+];
+
+let titleIndex = 0;
+let characterIndex = 0;
+let deleting = false;
+
+function typeAnimation() {
+  if (!typingElement) return;
+
+  const currentTitle = titles[titleIndex];
+
+  if (!deleting) {
+    characterIndex++;
+    typingElement.textContent =
+      currentTitle.substring(0, characterIndex);
+
+    if (characterIndex === currentTitle.length) {
+      deleting = true;
+      setTimeout(typeAnimation, 1800);
+      return;
+    }
+  } else {
+    characterIndex--;
+    typingElement.textContent =
+      currentTitle.substring(0, characterIndex);
+
+    if (characterIndex === 0) {
+      deleting = false;
+      titleIndex = (titleIndex + 1) % titles.length;
+    }
+  }
+
+  setTimeout(typeAnimation, deleting ? 35 : 75);
+}
+
+typeAnimation();
+
 </script>
 </body>
 </html>
