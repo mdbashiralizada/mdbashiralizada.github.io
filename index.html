@@ -1,204 +1,374 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Official portfolio of Muhammad Bashir Alizada - Computer Science Graduate, Web Developer and Database Professional.">
 <title>Muhammad Bashir Alizada | Portfolio</title>
-<meta name="description" content="Professional portfolio of Muhammad Bashir Alizada, Computer Science graduate and web developer.">
 
 <style>
 :root {
-  --bg: #080d18;
-  --card: #111a2b;
-  --text: #f1f5f9;
-  --muted: #a0aec0;
-  --blue: #38bdf8;
-  --border: #25344b;
+  --bg:#080d18;
+  --surface:#111a2b;
+  --surface2:#172238;
+  --text:#f1f5f9;
+  --muted:#9baac0;
+  --accent:#38bdf8;
+  --border:#27364d;
+  --shadow:0 15px 45px #0003;
 }
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+[data-theme="light"] {
+  --bg:#f5f8fc;
+  --surface:#ffffff;
+  --surface2:#eaf1fa;
+  --text:#172238;
+  --muted:#58677d;
+  --accent:#087fca;
+  --border:#dce5ef;
+  --shadow:0 15px 45px #17365b12;
+}
+* {box-sizing:border-box;margin:0;padding:0}
+html {scroll-behavior:smooth;scroll-padding-top:85px}
 body {
-  font-family: Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.7;
+  background:var(--bg);color:var(--text);
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.7;transition:.3s;
 }
-.container { width: 90%; max-width: 1050px; margin: auto; }
+a {color:inherit;text-decoration:none}
+.container {width:90%;max-width:1120px;margin:auto}
 header {
-  position: sticky; top: 0; z-index: 10;
-  background: #080d18ee;
-  border-bottom: 1px solid var(--border);
-  backdrop-filter: blur(12px);
+  position:sticky;top:0;z-index:100;
+  background:var(--bg);
+  border-bottom:1px solid var(--border);
 }
 nav {
-  min-height: 68px;
-  display: flex; justify-content: space-between;
-  align-items: center; gap: 15px;
+  min-height:75px;display:flex;
+  align-items:center;justify-content:space-between;
+  gap:15px;
 }
-.logo { color: var(--blue); font-weight: bold; font-size: 19px; }
-nav a {
-  color: var(--muted); text-decoration: none;
-  margin-left: 15px; font-size: 13px;
+.logo {font-size:24px;font-weight:800;color:var(--accent)}
+.navlinks {display:flex;gap:22px;align-items:center}
+.navlinks a {font-size:13px;color:var(--muted)}
+.navlinks a:hover {color:var(--accent)}
+.theme {
+  border:1px solid var(--border);
+  background:var(--surface);color:var(--text);
+  border-radius:50px;padding:9px 13px;
+  cursor:pointer;font-size:17px;
 }
-nav a:hover, .highlight { color: var(--blue); }
-.hero { padding: 95px 0 85px; }
-.tag { color: var(--blue); font-size: 14px; }
-h1 { font-size: clamp(35px, 7vw, 62px); line-height: 1.2; margin: 15px 0; }
-h1 span { color: var(--blue); }
-.hero p { color: var(--muted); max-width: 650px; }
+.hero {
+  min-height:580px;display:flex;align-items:center;
+  padding:80px 0;
+  background:radial-gradient(ellipse at 85% 40%,#1686b31a,transparent 50%);
+}
+.hero-grid {
+  display:grid;grid-template-columns:1.3fr .7fr;
+  gap:55px;align-items:center;
+}
+.eyebrow {
+  color:var(--accent);font-size:13px;
+  font-weight:bold;letter-spacing:3px;
+}
+h1 {
+  font-size:clamp(38px,6vw,67px);
+  line-height:1.15;margin:20px 0;
+}
+h1 span {color:var(--accent)}
+.hero h2 {font-size:20px;font-weight:500;margin-bottom:18px}
+p {color:var(--muted)}
+.hero p {max-width:610px;font-size:16px}
+.buttons {display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
 .btn {
-  display: inline-block; margin: 25px 10px 0 0;
-  padding: 11px 22px; border-radius: 7px;
-  text-decoration: none; font-weight: bold;
-  background: var(--blue); color: #07111d;
+  display:inline-block;padding:12px 22px;
+  background:var(--accent);color:#07111d;
+  font-size:14px;font-weight:bold;border-radius:7px;
+  transition:.25s;
 }
-.btn.secondary {
-  background: transparent; color: var(--blue);
-  border: 1px solid var(--blue);
+.btn:hover {transform:translateY(-3px);box-shadow:var(--shadow)}
+.btn-outline {
+  background:transparent;color:var(--accent);
+  border:1px solid var(--accent);
 }
-section { padding: 65px 0; }
-.section-title { font-size: 29px; margin-bottom: 25px; }
-.section-title span { color: var(--blue); }
-.about, .card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 12px; padding: 25px;
+.photo-wrap {
+  width:min(100%,330px);aspect-ratio:1;
+  margin:auto;border-radius:50%;padding:8px;
+  border:2px solid var(--accent);
+  box-shadow:0 0 55px #38bdf830;
 }
-.about p, .card p { color: var(--muted); }
+.photo-wrap img {
+  width:100%;height:100%;object-fit:cover;
+  border-radius:50%;
+}
+section {padding:80px 0}
+.section-head {margin-bottom:32px}
+.section-head small {
+  color:var(--accent);letter-spacing:3px;font-weight:bold;
+}
+.section-head h2 {font-size:34px;margin-top:8px}
+.section-head h2 span {color:var(--accent)}
+.about-box,.card {
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:13px;padding:27px;
+  box-shadow:var(--shadow);
+}
+.about-box p {font-size:16px}
 .grid {
-  display: grid; grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:20px;
 }
-.card h3 { color: var(--blue); margin-bottom: 9px; }
-.skills { display: flex; flex-wrap: wrap; gap: 12px; }
-.skills span {
-  background: var(--card); border: 1px solid var(--border);
-  padding: 9px 15px; border-radius: 7px;
-  color: var(--text); font-size: 14px;
+.card {transition:.25s}
+.card:hover {transform:translateY(-5px);border-color:var(--accent)}
+.card .symbol {font-size:27px;margin-bottom:12px}
+.card h3 {font-size:19px;margin-bottom:10px}
+.card p {font-size:14px}
+.skills {
+  display:flex;flex-wrap:wrap;gap:12px;
 }
-.contact { text-align: center; }
+.skill {
+  background:var(--surface);
+  border:1px solid var(--border);
+  padding:12px 18px;border-radius:8px;
+  font-size:14px;color:var(--text);
+}
+.skill:hover {border-color:var(--accent);color:var(--accent)}
+.timeline {
+  border-left:2px solid var(--accent);
+  padding-left:25px;margin-left:10px;
+}
+.timeline .card {margin-bottom:20px}
+.contact-grid {
+  display:grid;grid-template-columns:repeat(3,1fr);gap:15px;
+}
+.contact-item {
+  padding:22px;background:var(--surface);
+  border:1px solid var(--border);border-radius:10px;
+  overflow-wrap:anywhere;
+}
+.contact-item strong {display:block;margin-bottom:8px}
+.contact-item a {color:var(--accent);font-size:14px}
+.contact-item p {font-size:13px}
+.contact-intro {margin-bottom:25px}
 footer {
-  border-top: 1px solid var(--border);
-  padding: 25px; text-align: center;
-  color: var(--muted); font-size: 13px;
+  padding:28px 0;text-align:center;
+  border-top:1px solid var(--border);
+  color:var(--muted);font-size:13px;
 }
-@media(max-width:650px) {
-  nav { flex-direction: column; padding: 12px 0; }
-  nav a { margin: 0 6px; font-size: 12px; }
-  .grid { grid-template-columns: 1fr; }
-  .hero { padding: 65px 0; }
+.reveal {
+  opacity:0;transform:translateY(20px);
+  transition:opacity .7s,transform .7s;
+}
+.reveal.visible {opacity:1;transform:translateY(0)}
+@media(max-width:750px) {
+  .navlinks {gap:10px}
+  .navlinks a {font-size:11px}
+  .hero-grid {grid-template-columns:1fr;gap:35px}
+  .hero {padding:60px 0}
+  .photo-wrap {width:220px;grid-row:1}
+  .hero-content {text-align:center}
+  .hero p {margin:auto}
+  .buttons {justify-content:center}
+  .grid {grid-template-columns:1fr}
+  .contact-grid {grid-template-columns:1fr}
+  section {padding:60px 0}
+  nav {flex-wrap:wrap;padding:12px 0}
+}
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    scroll-behavior:auto!important;transition:none!important;
+  }
 }
 </style>
 </head>
 
 <body>
 <header>
-  <div class="container">
-    <nav>
-      <div class="logo">MBA.</div>
-      <div>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
+<div class="container">
+<nav>
+  <a class="logo" href="#home">MBA.</a>
+  <div class="navlinks">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <button class="theme" id="themeBtn" aria-label="Toggle color theme">☀️</button>
   </div>
+</nav>
+</div>
 </header>
 
 <main>
 <div class="container">
-  <div class="hero">
-    <div class="tag">WELCOME TO MY PORTFOLIO</div>
-    <h1>Hi, I'm <span>Muhammad Bashir Alizada</span></h1>
+
+<section class="hero" id="home">
+<div class="hero-grid">
+  <div class="hero-content">
+    <div class="eyebrow">WELCOME TO MY PORTFOLIO</div>
+    <h1>Muhammad Bashir <span>Alizada</span></h1>
     <h2>Computer Science Graduate | Web Developer</h2>
     <p>
-      I am a Computer Science graduate passionate about
-      web development, database management and technology.
-      I enjoy building practical digital solutions and
-      continuously improving my technical skills.
+      I am a Computer Science graduate from Nangarhar University,
+      passionate about web development, database management
+      and information systems. I enjoy building practical
+      digital solutions and continuously developing my skills.
     </p>
-    <a class="btn" href="#projects">Explore My Work</a>
-    <a class="btn secondary" href="#contact">Contact Me</a>
+    <div class="buttons">
+      <a class="btn" href="#projects">Explore My Work ↗</a>
+      <a class="btn btn-outline" href="#contact">Contact Me</a>
+    </div>
   </div>
+  <div class="photo-wrap">
+    <img src="profile.png" alt="Muhammad Bashir Alizada">
+  </div>
+</div>
+</section>
 
-  <section id="about">
-    <h2 class="section-title">About <span>Me</span></h2>
-    <div class="about">
-      <p>
-        I graduated from Nangarhar University, Faculty of
-        Computer Science, Department of Information Systems.
-        My interests include software development, database
-        systems, information management and IT solutions.
-        I am motivated to learn, solve problems and contribute
-        to meaningful technology projects.
-      </p>
-    </div>
-  </section>
+<section id="about">
+<div class="section-head">
+  <small>INTRODUCTION</small>
+  <h2>About <span>Me</span></h2>
+</div>
+<div class="about-box reveal">
+  <p>
+    I graduated from Nangarhar University, Faculty of Computer
+    Science, Department of Information Systems. My academic
+    background and practical work have developed my interest
+    in software development, database systems and information
+    management. I am motivated to solve problems, learn new
+    technologies and contribute to professional IT projects.
+  </p>
+</div>
+</section>
 
-  <section id="skills">
-    <h2 class="section-title">Technical <span>Skills</span></h2>
-    <div class="skills">
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>JavaScript</span>
-      <span>React</span>
-      <span>Node.js</span>
-      <span>MongoDB</span>
-      <span>Database Management</span>
-      <span>Information Systems</span>
-      <span>Web Development</span>
-    </div>
-  </section>
+<section id="skills">
+<div class="section-head">
+  <small>WHAT I WORK WITH</small>
+  <h2>Technical <span>Skills</span></h2>
+</div>
+<div class="skills reveal">
+  <span class="skill">HTML5</span>
+  <span class="skill">CSS3</span>
+  <span class="skill">JavaScript</span>
+  <span class="skill">React</span>
+  <span class="skill">Node.js</span>
+  <span class="skill">MongoDB</span>
+  <span class="skill">SQL</span>
+  <span class="skill">Database Management</span>
+  <span class="skill">Information Systems</span>
+  <span class="skill">Web Development</span>
+  <span class="skill">Microsoft Office</span>
+  <span class="skill">IT Support</span>
+</div>
+</section>
 
-  <section id="projects">
-    <h2 class="section-title">My <span>Projects</span></h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Human Resource Information Management System</h3>
-        <p>
-          Designed and developed an HRIMS project for
-          organizing employee records, managing personnel
-          information and generating reports.
-        </p>
-      </div>
-      <div class="card">
-        <h3>More Projects Coming Soon</h3>
-        <p>
-          I am continuously working on improving my
-          development skills and building new digital
-          solutions. More projects will be added here.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="education">
-    <h2 class="section-title">My <span>Education</span></h2>
-    <div class="card">
-      <h3>Bachelor's Degree in Computer Science</h3>
-      <p>Nangarhar University</p>
-      <p>Faculty of Computer Science</p>
-      <p>Department of Information Systems</p>
-    </div>
-  </section>
-
-  <section id="contact" class="contact">
-    <h2 class="section-title">Let's <span>Connect</span></h2>
-    <p style="color:var(--muted)">
-      Interested in working together or discussing
-      technology? Feel free to connect with me.
+<section id="projects">
+<div class="section-head">
+  <small>SELECTED WORK</small>
+  <h2>My <span>Projects</span></h2>
+</div>
+<div class="grid reveal">
+  <article class="card">
+    <div class="symbol">🗄️</div>
+    <h3>Human Resource Information Management System</h3>
+    <p>
+      Designed and developed an HRIMS project for managing
+      employee records, organizing personnel information,
+      maintaining structured data and generating reports.
     </p>
-    <a class="btn" href="https://github.com/mdbashiralizada">
-      My GitHub
-    </a>
-  </section>
+  </article>
+  <article class="card">
+    <div class="symbol">💻</div>
+    <h3>HKN Project</h3>
+    <p>
+      A project included in my portfolio. Further details,
+      objectives and technical implementation can be added
+      as the project documentation is prepared.
+    </p>
+  </article>
+</div>
+</section>
+
+<section id="education">
+<div class="section-head">
+  <small>ACADEMIC BACKGROUND</small>
+  <h2>My <span>Education</span></h2>
+</div>
+<div class="timeline reveal">
+  <div class="card">
+    <h3>Bachelor's Degree in Computer Science</h3>
+    <p>Nangarhar University</p>
+    <p>Faculty of Computer Science</p>
+    <p>Department of Information Systems</p>
+  </div>
+</div>
+</section>
+
+<section id="contact">
+<div class="section-head">
+  <small>GET IN TOUCH</small>
+  <h2>Let's <span>Connect</span></h2>
+</div>
+<p class="contact-intro">
+  I welcome professional opportunities, collaboration
+  and discussions about technology.
+</p>
+<div class="contact-grid reveal">
+  <div class="contact-item">
+    <strong>✉ Email</strong>
+    <a href="mailto:mb.alizada1@gmail.com">mb.alizada1@gmail.com</a>
+  </div>
+  <div class="contact-item">
+    <strong>☎ Phone / WhatsApp</strong>
+    <a href="https://wa.me/93776380570">+93 776 380 570</a>
+  </div>
+  <div class="contact-item">
+    <strong>⌘ GitHub</strong>
+    <a href="https://github.com/mdbashiralizada" target="_blank" rel="noopener">View GitHub Profile ↗</a>
+  </div>
+</div>
+</section>
+
 </div>
 </main>
 
 <footer>
-  © 2026 Muhammad Bashir Alizada. All rights reserved.
+  <div class="container">
+    © <span id="year"></span> Muhammad Bashir Alizada.
+    Designed with care.
+  </div>
 </footer>
+
+<script>
+const root = document.documentElement;
+const themeBtn = document.getElementById("themeBtn");
+
+function setTheme(theme) {
+  root.setAttribute("data-theme", theme);
+  themeBtn.textContent = theme === "dark" ? "☀️" : "🌙";
+  try { localStorage.setItem("portfolio-theme", theme); } catch(e) {}
+}
+
+let savedTheme = "dark";
+try { savedTheme = localStorage.getItem("portfolio-theme") || "dark"; } catch(e) {}
+setTheme(savedTheme);
+
+themeBtn.addEventListener("click", () => {
+  const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+  setTheme(next);
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:0.12});
+
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
