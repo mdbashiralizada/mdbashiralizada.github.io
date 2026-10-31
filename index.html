@@ -3,372 +3,606 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Official portfolio of Muhammad Bashir Alizada - Computer Science Graduate, Web Developer and Database Professional.">
-<title>Muhammad Bashir Alizada | Portfolio</title>
+<meta name="theme-color" content="#080e1c">
+<meta name="description" content="Muhammad Bashir Alizada — Computer Science Graduate specializing in Information Systems, Database Management, Project Coordination and Software Development.">
+<title>Muhammad Bashir Alizada | Professional Portfolio</title>
 
 <style>
 :root {
-  --bg:#080d18;
-  --surface:#111a2b;
-  --surface2:#172238;
-  --text:#f1f5f9;
-  --muted:#9baac0;
-  --accent:#38bdf8;
-  --border:#27364d;
-  --shadow:0 15px 45px #0003;
+ --bg:#080e1c;--surface:#101a2c;--surface2:#17243a;
+ --text:#f4f7fc;--muted:#a5b2c5;--accent:#43c7f4;
+ --accent2:#8b8cff;--border:#263650;--header:#080e1ceF;
+ --shadow:0 15px 45px #0003;
 }
 [data-theme="light"] {
-  --bg:#f5f8fc;
-  --surface:#ffffff;
-  --surface2:#eaf1fa;
-  --text:#172238;
-  --muted:#58677d;
-  --accent:#087fca;
-  --border:#dce5ef;
-  --shadow:0 15px 45px #17365b12;
+ --bg:#f5f8fd;--surface:#fff;--surface2:#eaf1fa;
+ --text:#17243a;--muted:#627087;--accent:#087eae;
+ --accent2:#5757c8;--border:#dce5f0;--header:#f5f8fdef;
+ --shadow:0 15px 40px #18345412;
 }
-* {box-sizing:border-box;margin:0;padding:0}
-html {scroll-behavior:smooth;scroll-padding-top:85px}
-body {
-  background:var(--bg);color:var(--text);
-  font-family:Arial,Helvetica,sans-serif;
-  line-height:1.7;transition:.3s;
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{
+ background:var(--bg);color:var(--text);
+ font-family:Inter,Arial,sans-serif;line-height:1.7;
+ transition:background .3s,color .3s;
 }
-a {color:inherit;text-decoration:none}
-.container {width:90%;max-width:1120px;margin:auto}
-header {
-  position:sticky;top:0;z-index:100;
-  background:var(--bg);
-  border-bottom:1px solid var(--border);
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.container{width:min(1120px,90%);margin:auto}
+header{
+ position:sticky;top:0;z-index:100;
+ background:var(--header);backdrop-filter:blur(15px);
+ border-bottom:1px solid var(--border);
 }
-nav {
-  min-height:75px;display:flex;
-  align-items:center;justify-content:space-between;
-  gap:15px;
+nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.logo{font-size:25px;font-weight:900;color:var(--accent);letter-spacing:-1px}
+.navlinks{display:flex;align-items:center;gap:23px}
+.navlinks a{font-size:13px;color:var(--muted);font-weight:600}
+.navlinks a:hover{color:var(--accent)}
+.actions{display:flex;gap:9px;align-items:center}
+.icon-btn{
+ width:40px;height:40px;border:1px solid var(--border);
+ background:var(--surface);color:var(--text);
+ border-radius:50%;cursor:pointer;
 }
-.logo {font-size:24px;font-weight:800;color:var(--accent)}
-.navlinks {display:flex;gap:22px;align-items:center}
-.navlinks a {font-size:13px;color:var(--muted)}
-.navlinks a:hover {color:var(--accent)}
-.theme {
-  border:1px solid var(--border);
-  background:var(--surface);color:var(--text);
-  border-radius:50px;padding:9px 13px;
-  cursor:pointer;font-size:17px;
+.menu-btn{display:none}
+.hero{
+ position:relative;overflow:hidden;padding:100px 0 85px;
+ background:radial-gradient(ellipse at 85% 30%,#268ec51c,transparent 45%);
 }
-.hero {
-  min-height:580px;display:flex;align-items:center;
-  padding:80px 0;
-  background:radial-gradient(ellipse at 85% 40%,#1686b31a,transparent 50%);
+.hero-grid{
+ display:grid;grid-template-columns:1.2fr .8fr;
+ align-items:center;gap:55px;
 }
-.hero-grid {
-  display:grid;grid-template-columns:1.3fr .7fr;
-  gap:55px;align-items:center;
+.eyebrow{
+ display:inline-flex;align-items:center;gap:9px;
+ color:var(--accent);font-size:12px;font-weight:800;
+ letter-spacing:2.5px;text-transform:uppercase;
 }
-.eyebrow {
-  color:var(--accent);font-size:13px;
-  font-weight:bold;letter-spacing:3px;
+.dot{width:8px;height:8px;border-radius:50%;background:#36d69a}
+h1{
+ font-size:clamp(40px,6vw,70px);
+ line-height:1.08;letter-spacing:-2.5px;
+ margin:22px 0 18px;font-weight:850;
 }
-h1 {
-  font-size:clamp(38px,6vw,67px);
-  line-height:1.15;margin:20px 0;
+.gradient{
+ background:linear-gradient(100deg,var(--accent),var(--accent2));
+ -webkit-background-clip:text;background-clip:text;color:transparent;
 }
-h1 span {color:var(--accent)}
-.hero h2 {font-size:20px;font-weight:500;margin-bottom:18px}
-p {color:var(--muted)}
-.hero p {max-width:610px;font-size:16px}
-.buttons {display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-.btn {
-  display:inline-block;padding:12px 22px;
-  background:var(--accent);color:#07111d;
-  font-size:14px;font-weight:bold;border-radius:7px;
-  transition:.25s;
+.hero h2{font-size:19px;font-weight:600;margin-bottom:17px}
+.hero p{color:var(--muted);font-size:16px;max-width:610px}
+.btns{display:flex;flex-wrap:wrap;gap:13px;margin-top:30px}
+.btn{
+ display:inline-flex;align-items:center;justify-content:center;
+ gap:9px;padding:13px 21px;border-radius:8px;
+ background:var(--accent);color:#07111d;font-weight:800;
+ font-size:14px;transition:.25s;border:1px solid var(--accent);
 }
-.btn:hover {transform:translateY(-3px);box-shadow:var(--shadow)}
-.btn-outline {
-  background:transparent;color:var(--accent);
-  border:1px solid var(--accent);
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 25px #38bdf430}
+.btn-outline{background:transparent;color:var(--accent)}
+.photo-area{position:relative;max-width:365px;margin:auto}
+.photo-frame{
+ aspect-ratio:1;border-radius:28px;padding:9px;
+ background:linear-gradient(140deg,var(--accent),var(--accent2));
+ transform:rotate(3deg);box-shadow:0 20px 60px #0004;
 }
-.photo-wrap {
-  width:min(100%,330px);aspect-ratio:1;
-  margin:auto;border-radius:50%;padding:8px;
-  border:2px solid var(--accent);
-  box-shadow:0 0 55px #38bdf830;
+.photo-frame img{
+ width:100%;height:100%;object-fit:cover;
+ border-radius:21px;display:block;transform:rotate(-3deg);
 }
-.photo-wrap img {
-  width:100%;height:100%;object-fit:cover;
-  border-radius:50%;
+.photo-note{
+ position:absolute;bottom:-22px;left:-25px;
+ background:var(--surface);border:1px solid var(--border);
+ border-radius:12px;padding:13px 18px;box-shadow:var(--shadow);
+ font-size:13px;font-weight:700;
 }
-section {padding:80px 0}
-.section-head {margin-bottom:32px}
-.section-head small {
-  color:var(--accent);letter-spacing:3px;font-weight:bold;
+.photo-note span{color:var(--accent)}
+section{padding:83px 0}
+.section-head{margin-bottom:30px}
+.section-head small{
+ color:var(--accent);font-size:11px;
+ font-weight:800;letter-spacing:3px;text-transform:uppercase;
 }
-.section-head h2 {font-size:34px;margin-top:8px}
-.section-head h2 span {color:var(--accent)}
-.about-box,.card {
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:13px;padding:27px;
-  box-shadow:var(--shadow);
+.section-head h2{font-size:clamp(28px,4vw,39px);line-height:1.2;margin-top:8px}
+.section-head p{margin-top:9px;color:var(--muted);max-width:650px}
+.about-box{
+ background:var(--surface);border:1px solid var(--border);
+ border-radius:16px;padding:30px;box-shadow:var(--shadow);
 }
-.about-box p {font-size:16px}
-.grid {
-  display:grid;grid-template-columns:repeat(2,1fr);
-  gap:20px;
+.about-box p{color:var(--muted);font-size:16px}
+.stats{
+ display:grid;grid-template-columns:repeat(3,1fr);
+ gap:15px;margin-top:20px;
 }
-.card {transition:.25s}
-.card:hover {transform:translateY(-5px);border-color:var(--accent)}
-.card .symbol {font-size:27px;margin-bottom:12px}
-.card h3 {font-size:19px;margin-bottom:10px}
-.card p {font-size:14px}
-.skills {
-  display:flex;flex-wrap:wrap;gap:12px;
+.stat{
+ background:var(--surface);border:1px solid var(--border);
+ padding:20px;border-radius:12px;text-align:center;
 }
-.skill {
-  background:var(--surface);
-  border:1px solid var(--border);
-  padding:12px 18px;border-radius:8px;
-  font-size:14px;color:var(--text);
+.stat strong{font-size:27px;color:var(--accent);display:block}
+.stat span{font-size:12px;color:var(--muted)}
+.expertise-grid,.project-grid{
+ display:grid;grid-template-columns:repeat(2,1fr);gap:18px;
 }
-.skill:hover {border-color:var(--accent);color:var(--accent)}
-.timeline {
-  border-left:2px solid var(--accent);
-  padding-left:25px;margin-left:10px;
+.card{
+ background:var(--surface);border:1px solid var(--border);
+ padding:25px;border-radius:14px;
+ transition:.25s;box-shadow:var(--shadow);
 }
-.timeline .card {margin-bottom:20px}
-.contact-grid {
-  display:grid;grid-template-columns:repeat(3,1fr);gap:15px;
+.card:hover{transform:translateY(-5px);border-color:var(--accent)}
+.card-icon{
+ width:47px;height:47px;display:grid;place-items:center;
+ background:var(--surface2);border-radius:12px;
+ font-size:22px;margin-bottom:17px;
 }
-.contact-item {
-  padding:22px;background:var(--surface);
-  border:1px solid var(--border);border-radius:10px;
-  overflow-wrap:anywhere;
+.card h3{font-size:18px;margin-bottom:9px}
+.card p{color:var(--muted);font-size:14px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{
+ font-size:11px;padding:5px 10px;border-radius:20px;
+ background:var(--surface2);color:var(--accent);
+ border:1px solid var(--border);
 }
-.contact-item strong {display:block;margin-bottom:8px}
-.contact-item a {color:var(--accent);font-size:14px}
-.contact-item p {font-size:13px}
-.contact-intro {margin-bottom:25px}
-footer {
-  padding:28px 0;text-align:center;
-  border-top:1px solid var(--border);
-  color:var(--muted);font-size:13px;
+.skill-groups{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.skill-group{
+ background:var(--surface);border:1px solid var(--border);
+ padding:25px;border-radius:14px;
 }
-.reveal {
-  opacity:0;transform:translateY(20px);
-  transition:opacity .7s,transform .7s;
+.skill-group h3{margin-bottom:16px;font-size:18px}
+.skill-list{display:flex;flex-wrap:wrap;gap:9px}
+.skill{
+ background:var(--surface2);border:1px solid var(--border);
+ padding:8px 12px;border-radius:7px;font-size:13px;
 }
-.reveal.visible {opacity:1;transform:translateY(0)}
-@media(max-width:750px) {
-  .navlinks {gap:10px}
-  .navlinks a {font-size:11px}
-  .hero-grid {grid-template-columns:1fr;gap:35px}
-  .hero {padding:60px 0}
-  .photo-wrap {width:220px;grid-row:1}
-  .hero-content {text-align:center}
-  .hero p {margin:auto}
-  .buttons {justify-content:center}
-  .grid {grid-template-columns:1fr}
-  .contact-grid {grid-template-columns:1fr}
-  section {padding:60px 0}
-  nav {flex-wrap:wrap;padding:12px 0}
+.timeline{border-left:2px solid var(--accent);margin-left:9px;padding-left:25px}
+.timeline-item{position:relative;margin-bottom:22px}
+.timeline-item:before{
+ content:"";position:absolute;left:-33px;top:27px;
+ width:13px;height:13px;border-radius:50%;
+ background:var(--accent);border:3px solid var(--bg);
 }
-@media(prefers-reduced-motion:reduce) {
-  *,*::before,*::after {
-    scroll-behavior:auto!important;transition:none!important;
-  }
+.date{font-size:12px;color:var(--accent);font-weight:800;letter-spacing:1px}
+.timeline-item h3{font-size:19px;margin:5px 0}
+.timeline-item p{font-size:14px;color:var(--muted)}
+.project-card{display:flex;flex-direction:column}
+.project-card .tags{margin-top:auto;padding-top:18px}
+.language-grid{
+ display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
+}
+.language{
+ background:var(--surface);border:1px solid var(--border);
+ border-radius:13px;padding:20px 10px;text-align:center;
+}
+.ring{
+ width:85px;height:85px;margin:0 auto 12px;
+ border-radius:50%;display:grid;place-items:center;
+ background:conic-gradient(var(--accent) var(--value),var(--surface2) 0);
+ position:relative;
+}
+.ring:before{
+ content:"";position:absolute;inset:7px;
+ background:var(--surface);border-radius:50%;
+}
+.ring strong{position:relative;font-size:17px}
+.language h3{font-size:14px}
+.language p{font-size:11px;color:var(--muted)}
+.contact-panel{
+ padding:35px;border:1px solid var(--border);
+ background:var(--surface);border-radius:17px;
+}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.contact-item{
+ display:flex;align-items:center;gap:14px;
+ padding:17px;border:1px solid var(--border);
+ background:var(--surface2);border-radius:10px;
+ overflow-wrap:anywhere;
+}
+.contact-icon{
+ min-width:39px;height:39px;display:grid;
+ place-items:center;border-radius:10px;
+ background:var(--surface);font-size:18px;
+}
+.contact-item small{display:block;color:var(--muted);font-size:11px}
+.contact-item strong{font-size:13px}
+.contact-item a:hover{color:var(--accent)}
+footer{
+ border-top:1px solid var(--border);
+ padding:27px 0;text-align:center;
+ color:var(--muted);font-size:12px;
+}
+.reveal{opacity:0;transform:translateY(20px);transition:.7s}
+.reveal.show{opacity:1;transform:translateY(0)}
+@media(max-width:800px){
+ .navlinks{gap:12px}
+ .navlinks a{font-size:11px}
+ .hero-grid{grid-template-columns:1fr;gap:45px}
+ .photo-area{width:230px;grid-row:1}
+ .hero-content{text-align:center}
+ .hero p{margin:auto}
+ .btns{justify-content:center}
+}
+@media(max-width:600px){
+ nav{height:auto;min-height:68px;flex-wrap:wrap;padding:12px 0}
+ .menu-btn{display:inline-grid;place-items:center}
+ .navlinks{
+  display:none;flex-direction:column;align-items:stretch;
+  width:100%;padding:12px 0 17px;gap:0;
+ }
+ .navlinks.open{display:flex}
+ .navlinks a{padding:10px 5px;font-size:14px}
+ .hero{padding:65px 0}
+ h1{letter-spacing:-1.5px}
+ section{padding:62px 0}
+ .expertise-grid,.project-grid,.skill-groups{grid-template-columns:1fr}
+ .stats{gap:8px}
+ .stat{padding:13px 5px}
+ .stat strong{font-size:21px}
+ .stat span{font-size:10px}
+ .language-grid{grid-template-columns:repeat(2,1fr)}
+ .contact-grid{grid-template-columns:1fr}
+ .contact-panel{padding:18px}
+ .photo-note{left:-12px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{scroll-behavior:auto!important;transition:none!important}
+ .reveal{opacity:1;transform:none}
 }
 </style>
 </head>
 
 <body>
 <header>
-<div class="container">
-<nav>
-  <a class="logo" href="#home">MBA.</a>
-  <div class="navlinks">
+ <div class="container">
+  <nav>
+   <a class="logo" href="#home">MBA<span class="gradient">.</span></a>
+   <div class="actions">
+    <button class="icon-btn" id="themeBtn" aria-label="Switch theme">☀</button>
+    <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+   </div>
+   <div class="navlinks" id="navlinks">
     <a href="#about">About</a>
+    <a href="#expertise">Expertise</a>
     <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
     <a href="#contact">Contact</a>
-    <button class="theme" id="themeBtn" aria-label="Toggle color theme">☀️</button>
-  </div>
-</nav>
-</div>
+   </div>
+  </nav>
+ </div>
 </header>
 
 <main>
 <div class="container">
 
 <section class="hero" id="home">
-<div class="hero-grid">
+ <div class="hero-grid">
   <div class="hero-content">
-    <div class="eyebrow">WELCOME TO MY PORTFOLIO</div>
-    <h1>Muhammad Bashir <span>Alizada</span></h1>
-    <h2>Computer Science Graduate | Web Developer</h2>
-    <p>
-      I am a Computer Science graduate from Nangarhar University,
-      passionate about web development, database management
-      and information systems. I enjoy building practical
-      digital solutions and continuously developing my skills.
-    </p>
-    <div class="buttons">
-      <a class="btn" href="#projects">Explore My Work ↗</a>
-      <a class="btn btn-outline" href="#contact">Contact Me</a>
-    </div>
+   <div class="eyebrow"><span class="dot"></span> COMPUTER SCIENCE PROFESSIONAL</div>
+   <h1>Muhammad Bashir <span class="gradient">Alizada</span></h1>
+   <h2>Information Systems | Database Management | Project Coordination</h2>
+   <p>
+    Computer Science graduate with a background in Information Systems
+    and an interest in building organized, reliable and practical
+    technology solutions. Combining knowledge of databases,
+    software development, data management and project coordination.
+   </p>
+   <div class="btns">
+    <a class="btn" href="#experience">Explore My Work ↗</a>
+    <a class="btn btn-outline" href="#contact">Let's Connect</a>
+   </div>
   </div>
-  <div class="photo-wrap">
-    <img src="profile.png" alt="Muhammad Bashir Alizada">
+  <div class="photo-area">
+   <div class="photo-frame">
+    <img src="profile.png" alt="Professional portrait of Muhammad Bashir Alizada">
+   </div>
+   <div class="photo-note">📍 <span>Kabul, Afghanistan</span></div>
   </div>
-</div>
+ </div>
 </section>
 
 <section id="about">
-<div class="section-head">
-  <small>INTRODUCTION</small>
-  <h2>About <span>Me</span></h2>
-</div>
-<div class="about-box reveal">
+ <div class="section-head">
+  <small>01 / INTRODUCTION</small>
+  <h2>About <span class="gradient">Me</span></h2>
+  <p>A professional overview of my background and interests.</p>
+ </div>
+ <div class="about-box reveal">
   <p>
-    I graduated from Nangarhar University, Faculty of Computer
-    Science, Department of Information Systems. My academic
-    background and practical work have developed my interest
-    in software development, database systems and information
-    management. I am motivated to solve problems, learn new
-    technologies and contribute to professional IT projects.
+   I am a Computer Science graduate specializing in Information Systems
+   from Nangarhar University. My background includes database management,
+   data organization, reporting, web and software development, and
+   project coordination. I have worked on practical systems involving
+   employee records, business inventory and sales information.
+   I value structured work, problem solving, documentation and
+   continuous learning. I aim to contribute to organizations by
+   applying technical knowledge and delivering dependable solutions.
   </p>
-</div>
+ </div>
+ <div class="stats reveal">
+  <div class="stat"><strong>2026</strong><span>Graduation year</span></div>
+  <div class="stat"><strong>3</strong><span>Featured projects / roles</span></div>
+  <div class="stat"><strong>6+</strong><span>Technical disciplines</span></div>
+ </div>
+</section>
+
+<section id="expertise">
+ <div class="section-head">
+  <small>02 / CORE CAPABILITIES</small>
+  <h2>Areas of <span class="gradient">Expertise</span></h2>
+  <p>Key areas where I can contribute to teams and organizations.</p>
+ </div>
+ <div class="expertise-grid reveal">
+  <article class="card">
+   <div class="card-icon">📊</div>
+   <h3>Project Management</h3>
+   <p>Project planning, requirements gathering, task coordination,
+   workflow organization, progress tracking, documentation and
+   quality assurance.</p>
+  </article>
+  <article class="card">
+   <div class="card-icon">📈</div>
+   <h3>Data & Reporting</h3>
+   <p>Data organization, validation, structured records, information
+   management, spreadsheet organization and reporting.</p>
+  </article>
+  <article class="card">
+   <div class="card-icon">🗄️</div>
+   <h3>Database Management</h3>
+   <p>MySQL, SQL, database design, tables and relationships,
+   CRUD operations and data retrieval.</p>
+  </article>
+  <article class="card">
+   <div class="card-icon">💻</div>
+   <h3>Software Engineering</h3>
+   <p>Object-oriented programming, systems analysis, debugging,
+   testing, documentation and problem solving.</p>
+  </article>
+ </div>
 </section>
 
 <section id="skills">
-<div class="section-head">
-  <small>WHAT I WORK WITH</small>
-  <h2>Technical <span>Skills</span></h2>
-</div>
-<div class="skills reveal">
-  <span class="skill">HTML5</span>
-  <span class="skill">CSS3</span>
-  <span class="skill">JavaScript</span>
-  <span class="skill">React</span>
-  <span class="skill">Node.js</span>
-  <span class="skill">MongoDB</span>
-  <span class="skill">SQL</span>
-  <span class="skill">Database Management</span>
-  <span class="skill">Information Systems</span>
-  <span class="skill">Web Development</span>
-  <span class="skill">Microsoft Office</span>
-  <span class="skill">IT Support</span>
-</div>
+ <div class="section-head">
+  <small>03 / TECHNOLOGY</small>
+  <h2>Technical <span class="gradient">Skills</span></h2>
+  <p>Tools, technologies and methods included in my professional CV.</p>
+ </div>
+ <div class="skill-groups reveal">
+  <div class="skill-group">
+   <h3>Programming & Development</h3>
+   <div class="skill-list">
+    <span class="skill">Python</span><span class="skill">C</span>
+    <span class="skill">C++</span><span class="skill">C#</span>
+    <span class="skill">Java</span><span class="skill">HTML</span>
+    <span class="skill">CSS</span><span class="skill">JavaScript</span>
+    <span class="skill">PHP</span><span class="skill">Laravel</span>
+    <span class="skill">React.js</span><span class="skill">Tailwind CSS</span>
+   </div>
+  </div>
+  <div class="skill-group">
+   <h3>Database & Data</h3>
+   <div class="skill-list">
+    <span class="skill">MySQL</span><span class="skill">SQL</span>
+    <span class="skill">Database Design</span>
+    <span class="skill">Tables & Relationships</span>
+    <span class="skill">CRUD Operations</span>
+    <span class="skill">Data Retrieval</span>
+    <span class="skill">Data Validation</span>
+    <span class="skill">Reporting</span>
+   </div>
+  </div>
+  <div class="skill-group">
+   <h3>Project Management</h3>
+   <div class="skill-list">
+    <span class="skill">Project Planning</span>
+    <span class="skill">Task Coordination</span>
+    <span class="skill">Requirements Gathering</span>
+    <span class="skill">Progress Tracking</span>
+    <span class="skill">Documentation</span>
+    <span class="skill">Quality Assurance</span>
+    <span class="skill">Risk Identification</span>
+   </div>
+  </div>
+  <div class="skill-group">
+   <h3>Office & Professional</h3>
+   <div class="skill-list">
+    <span class="skill">Microsoft Excel</span>
+    <span class="skill">Microsoft Word</span>
+    <span class="skill">PowerPoint</span>
+    <span class="skill">OOP</span>
+    <span class="skill">Systems Analysis</span>
+    <span class="skill">Debugging</span>
+    <span class="skill">Problem Solving</span>
+   </div>
+  </div>
+ </div>
 </section>
 
-<section id="projects">
-<div class="section-head">
-  <small>SELECTED WORK</small>
-  <h2>My <span>Projects</span></h2>
-</div>
-<div class="grid reveal">
-  <article class="card">
-    <div class="symbol">🗄️</div>
-    <h3>Human Resource Information Management System</h3>
-    <p>
-      Designed and developed an HRIMS project for managing
-      employee records, organizing personnel information,
-      maintaining structured data and generating reports.
-    </p>
+<section id="experience">
+ <div class="section-head">
+  <small>04 / PRACTICAL WORK</small>
+  <h2>Experience & <span class="gradient">Projects</span></h2>
+  <p>Selected systems and business experience from my CV.</p>
+ </div>
+ <div class="project-grid reveal">
+  <article class="card project-card">
+   <div class="card-icon">👥</div>
+   <h3>Human Resource Information Management System (HRIMS)</h3>
+   <p>
+    Designed and developed a system to manage employee records,
+    organize personnel data and generate reports efficiently.
+    Improved data organization and accessibility through
+    structured database management.
+   </p>
+   <div class="tags">
+    <span class="tag">Information Systems</span>
+    <span class="tag">Database</span>
+    <span class="tag">Reporting</span>
+   </div>
   </article>
-  <article class="card">
-    <div class="symbol">💻</div>
-    <h3>HKN Project</h3>
-    <p>
-      A project included in my portfolio. Further details,
-      objectives and technical implementation can be added
-      as the project documentation is prepared.
-    </p>
+  <article class="card project-card">
+   <div class="card-icon">📦</div>
+   <h3>Stationery Shop Management System</h3>
+   <p>
+    Developed a management system to organize product inventory,
+    sales records and business information, supporting more
+    structured day-to-day business operations.
+   </p>
+   <div class="tags">
+    <span class="tag">Inventory</span>
+    <span class="tag">Sales Records</span>
+    <span class="tag">Data Management</span>
+   </div>
   </article>
-</div>
+  <article class="card project-card">
+   <div class="card-icon">💎</div>
+   <h3>HKN Rhinestones — Business Owner</h3>
+   <p>
+    Manage a rhinestones business, overseeing product inventory,
+    sales and customer service. Use a management system to
+    maintain records, track products and organize daily operations.
+   </p>
+   <div class="tags">
+    <span class="tag">Business Management</span>
+    <span class="tag">Inventory</span>
+    <span class="tag">Customer Service</span>
+   </div>
+  </article>
+ </div>
 </section>
 
 <section id="education">
-<div class="section-head">
-  <small>ACADEMIC BACKGROUND</small>
-  <h2>My <span>Education</span></h2>
-</div>
-<div class="timeline reveal">
-  <div class="card">
-    <h3>Bachelor's Degree in Computer Science</h3>
-    <p>Nangarhar University</p>
-    <p>Faculty of Computer Science</p>
-    <p>Department of Information Systems</p>
+ <div class="section-head">
+  <small>05 / ACADEMIC BACKGROUND</small>
+  <h2>My <span class="gradient">Education</span></h2>
+ </div>
+ <div class="timeline reveal">
+  <div class="timeline-item">
+   <div class="date">2022 — 2026</div>
+   <h3>Bachelor's Degree in Computer Science</h3>
+   <p>Nangarhar University</p>
+   <p>Faculty of Computer Science · Department of Information Systems</p>
   </div>
-</div>
+  <div class="timeline-item">
+   <div class="date">2008 — 2021</div>
+   <h3>High School Diploma</h3>
+   <p>Balish High School · Urgoon, Paktika, Afghanistan</p>
+  </div>
+ </div>
+</section>
+
+<section id="languages">
+ <div class="section-head">
+  <small>06 / COMMUNICATION</small>
+  <h2>Languages <span class="gradient">I Speak</span></h2>
+  <p>Language proficiency levels as presented in my CV.</p>
+ </div>
+ <div class="language-grid reveal">
+  <div class="language">
+   <div class="ring" style="--value:99%"><strong>99%</strong></div>
+   <h3>Pashto</h3><p>Native</p>
+  </div>
+  <div class="language">
+   <div class="ring" style="--value:85%"><strong>85%</strong></div>
+   <h3>Dari</h3><p>Proficiency</p>
+  </div>
+  <div class="language">
+   <div class="ring" style="--value:90%"><strong>90%</strong></div>
+   <h3>English</h3><p>Proficiency</p>
+  </div>
+  <div class="language">
+   <div class="ring" style="--value:95%"><strong>95%</strong></div>
+   <h3>Urdu</h3><p>Proficiency</p>
+  </div>
+ </div>
 </section>
 
 <section id="contact">
-<div class="section-head">
-  <small>GET IN TOUCH</small>
-  <h2>Let's <span>Connect</span></h2>
-</div>
-<p class="contact-intro">
-  I welcome professional opportunities, collaboration
-  and discussions about technology.
-</p>
-<div class="contact-grid reveal">
-  <div class="contact-item">
-    <strong>✉ Email</strong>
-    <a href="mailto:mb.alizada1@gmail.com">mb.alizada1@gmail.com</a>
+ <div class="section-head">
+  <small>07 / GET IN TOUCH</small>
+  <h2>Let's Work <span class="gradient">Together</span></h2>
+  <p>Open to professional opportunities, collaboration and meaningful projects.</p>
+ </div>
+ <div class="contact-panel reveal">
+  <div class="contact-grid">
+   <div class="contact-item">
+    <div class="contact-icon">✉</div>
+    <div><small>Email</small>
+    <strong><a href="mailto:mb.alizada1@gmail.com">mb.alizada1@gmail.com</a></strong></div>
+   </div>
+   <div class="contact-item">
+    <div class="contact-icon">☎</div>
+    <div><small>Phone / WhatsApp</small>
+    <strong><a href="https://wa.me/93776380570">+93 (0) 776 380 570</a></strong></div>
+   </div>
+   <div class="contact-item">
+    <div class="contact-icon">➤</div>
+    <div><small>Telegram</small>
+    <strong><a href="https://t.me/bashirkhanalizada" target="_blank" rel="noopener">t.me/bashirkhanalizada</a></strong></div>
+   </div>
+   <div class="contact-item">
+    <div class="contact-icon">⌘</div>
+    <div><small>GitHub</small>
+    <strong><a href="https://github.com/mdbashiralizada" target="_blank" rel="noopener">github.com/mdbashiralizada</a></strong></div>
+   </div>
   </div>
-  <div class="contact-item">
-    <strong>☎ Phone / WhatsApp</strong>
-    <a href="https://wa.me/93776380570">+93 776 380 570</a>
-  </div>
-  <div class="contact-item">
-    <strong>⌘ GitHub</strong>
-    <a href="https://github.com/mdbashiralizada" target="_blank" rel="noopener">View GitHub Profile ↗</a>
-  </div>
-</div>
+ </div>
 </section>
 
 </div>
 </main>
 
 <footer>
-  <div class="container">
-    © <span id="year"></span> Muhammad Bashir Alizada.
-    Designed with care.
-  </div>
+ <div class="container">
+  © <span id="year"></span> Muhammad Bashir Alizada · Kabul, Afghanistan
+ </div>
 </footer>
 
 <script>
 const root = document.documentElement;
 const themeBtn = document.getElementById("themeBtn");
+const menuBtn = document.getElementById("menuBtn");
+const navlinks = document.getElementById("navlinks");
 
-function setTheme(theme) {
-  root.setAttribute("data-theme", theme);
-  themeBtn.textContent = theme === "dark" ? "☀️" : "🌙";
-  try { localStorage.setItem("portfolio-theme", theme); } catch(e) {}
+let theme = "dark";
+try {
+ theme = localStorage.getItem("mba-theme") || "dark";
+} catch(e) {}
+
+function applyTheme(value) {
+ root.setAttribute("data-theme",value);
+ themeBtn.textContent = value === "dark" ? "☀" : "☾";
+ try { localStorage.setItem("mba-theme",value); } catch(e) {}
 }
+applyTheme(theme);
 
-let savedTheme = "dark";
-try { savedTheme = localStorage.getItem("portfolio-theme") || "dark"; } catch(e) {}
-setTheme(savedTheme);
+themeBtn.addEventListener("click",()=>{
+ theme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+ applyTheme(theme);
+});
 
-themeBtn.addEventListener("click", () => {
-  const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-  setTheme(next);
+menuBtn.addEventListener("click",()=>{
+ navlinks.classList.toggle("open");
+});
+
+navlinks.querySelectorAll("a").forEach(link=>{
+ link.addEventListener("click",()=>navlinks.classList.remove("open"));
 });
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting) {
-      entry.target.classList.add("visible");
-      observer.unobserve(entry.target);
-    }
+if ("IntersectionObserver" in window) {
+ const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+   if(entry.isIntersecting){
+    entry.target.classList.add("show");
+    observer.unobserve(entry.target);
+   }
   });
-},{threshold:0.12});
-
-document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+ },{threshold:0.1});
+ document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+} else {
+ document.querySelectorAll(".reveal").forEach(el=>el.classList.add("show"));
+}
 </script>
 </body>
 </html>
