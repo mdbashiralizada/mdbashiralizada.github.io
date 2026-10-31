@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammad Bashir Alizada | Portfolio</title>
+<meta name="description" content="Professional portfolio of Muhammad Bashir Alizada, Computer Science graduate and web developer.">
+
+<style>
+:root {
+  --bg: #080d18;
+  --card: #111a2b;
+  --text: #f1f5f9;
+  --muted: #a0aec0;
+  --blue: #38bdf8;
+  --border: #25344b;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+.container { width: 90%; max-width: 1050px; margin: auto; }
+header {
+  position: sticky; top: 0; z-index: 10;
+  background: #080d18ee;
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+nav {
+  min-height: 68px;
+  display: flex; justify-content: space-between;
+  align-items: center; gap: 15px;
+}
+.logo { color: var(--blue); font-weight: bold; font-size: 19px; }
+nav a {
+  color: var(--muted); text-decoration: none;
+  margin-left: 15px; font-size: 13px;
+}
+nav a:hover, .highlight { color: var(--blue); }
+.hero { padding: 95px 0 85px; }
+.tag { color: var(--blue); font-size: 14px; }
+h1 { font-size: clamp(35px, 7vw, 62px); line-height: 1.2; margin: 15px 0; }
+h1 span { color: var(--blue); }
+.hero p { color: var(--muted); max-width: 650px; }
+.btn {
+  display: inline-block; margin: 25px 10px 0 0;
+  padding: 11px 22px; border-radius: 7px;
+  text-decoration: none; font-weight: bold;
+  background: var(--blue); color: #07111d;
+}
+.btn.secondary {
+  background: transparent; color: var(--blue);
+  border: 1px solid var(--blue);
+}
+section { padding: 65px 0; }
+.section-title { font-size: 29px; margin-bottom: 25px; }
+.section-title span { color: var(--blue); }
+.about, .card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px; padding: 25px;
+}
+.about p, .card p { color: var(--muted); }
+.grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+.card h3 { color: var(--blue); margin-bottom: 9px; }
+.skills { display: flex; flex-wrap: wrap; gap: 12px; }
+.skills span {
+  background: var(--card); border: 1px solid var(--border);
+  padding: 9px 15px; border-radius: 7px;
+  color: var(--text); font-size: 14px;
+}
+.contact { text-align: center; }
+footer {
+  border-top: 1px solid var(--border);
+  padding: 25px; text-align: center;
+  color: var(--muted); font-size: 13px;
+}
+@media(max-width:650px) {
+  nav { flex-direction: column; padding: 12px 0; }
+  nav a { margin: 0 6px; font-size: 12px; }
+  .grid { grid-template-columns: 1fr; }
+  .hero { padding: 65px 0; }
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">MBA.</div>
+      <div>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="container">
+  <div class="hero">
+    <div class="tag">WELCOME TO MY PORTFOLIO</div>
+    <h1>Hi, I'm <span>Muhammad Bashir Alizada</span></h1>
+    <h2>Computer Science Graduate | Web Developer</h2>
+    <p>
+      I am a Computer Science graduate passionate about
+      web development, database management and technology.
+      I enjoy building practical digital solutions and
+      continuously improving my technical skills.
+    </p>
+    <a class="btn" href="#projects">Explore My Work</a>
+    <a class="btn secondary" href="#contact">Contact Me</a>
+  </div>
+
+  <section id="about">
+    <h2 class="section-title">About <span>Me</span></h2>
+    <div class="about">
+      <p>
+        I graduated from Nangarhar University, Faculty of
+        Computer Science, Department of Information Systems.
+        My interests include software development, database
+        systems, information management and IT solutions.
+        I am motivated to learn, solve problems and contribute
+        to meaningful technology projects.
+      </p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">Technical <span>Skills</span></h2>
+    <div class="skills">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>React</span>
+      <span>Node.js</span>
+      <span>MongoDB</span>
+      <span>Database Management</span>
+      <span>Information Systems</span>
+      <span>Web Development</span>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">My <span>Projects</span></h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Human Resource Information Management System</h3>
+        <p>
+          Designed and developed an HRIMS project for
+          organizing employee records, managing personnel
+          information and generating reports.
+        </p>
+      </div>
+      <div class="card">
+        <h3>More Projects Coming Soon</h3>
+        <p>
+          I am continuously working on improving my
+          development skills and building new digital
+          solutions. More projects will be added here.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2 class="section-title">My <span>Education</span></h2>
+    <div class="card">
+      <h3>Bachelor's Degree in Computer Science</h3>
+      <p>Nangarhar University</p>
+      <p>Faculty of Computer Science</p>
+      <p>Department of Information Systems</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2 class="section-title">Let's <span>Connect</span></h2>
+    <p style="color:var(--muted)">
+      Interested in working together or discussing
+      technology? Feel free to connect with me.
+    </p>
+    <a class="btn" href="https://github.com/mdbashiralizada">
+      My GitHub
+    </a>
+  </section>
+</div>
+</main>
+
+<footer>
+  © 2026 Muhammad Bashir Alizada. All rights reserved.
+</footer>
+</body>
+</html>
