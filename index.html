@@ -1,319 +1,509 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080e1c">
-<meta name="description" content="Muhammad Bashir Alizada — Computer Science Graduate specializing in Information Systems, Database Management, Project Coordination and Software Development.">
-<title>Muhammad Bashir Alizada | Professional Portfolio</title>
-
- 
-/* Typing animation */
-.typing-line {
-  min-height: 65px;
-  font-size: clamp(17px, 2.5vw, 23px);
-  color: var(--accent);
-  font-weight: 700;
-}
-
-.cursor {
-  display: inline-block;
-  color: var(--accent);
-  animation: blink .7s infinite;
-}
-
-@keyframes blink {
-  50% { opacity: 0; }
-}
-
-/* Floating cards */
-.card, .skill-group, .language, .stat {
-  transition: transform .35s ease, box-shadow .35s ease,
-              border-color .35s ease;
-}
-
-.card:hover, .skill-group:hover, .language:hover, .stat:hover {
-  transform: translateY(-9px);
-  box-shadow: 0 18px 40px #38bdf425;
-  border-color: var(--accent);
-}
-
-/* Gentle floating photo */
-.photo-area {
-  animation: floatPhoto 5s ease-in-out infinite;
-}
-
-@keyframes floatPhoto {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-}
-
-/* Animated gradient */
-.gradient {
-  background-size: 200% auto;
-  animation: gradientMove 4s linear infinite;
-}
-
-@keyframes gradientMove {
-  to { background-position: 200% center; }
-}
-
-/* Moving project cards */
-.project-card:nth-child(1) { animation: cardFloat 5s ease-in-out infinite; }
-.project-card:nth-child(2) { animation: cardFloat 6s ease-in-out infinite 1s; }
-.project-card:nth-child(3) { animation: cardFloat 5.5s ease-in-out infinite 2s; }
-
-@keyframes cardFloat {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-}
-
-/* Accessibility */
-@media (prefers-reduced-motion: reduce) {
-  .photo-area, .project-card, .gradient, .cursor {
-    animation: none !important;
-  }
-}
+<meta name="description" content="Muhammad Bashir Alizada — Computer Science graduate specializing in Web Development, Information Systems, Database Management, Data Analysis and Project Coordination.">
+<title>Muhammad Bashir Alizada | Portfolio</title>
 
 <style>
 :root {
- --bg:#080e1c;--surface:#101a2c;--surface2:#17243a;
- --text:#f4f7fc;--muted:#a5b2c5;--accent:#43c7f4;
- --accent2:#8b8cff;--border:#263650;--header:#080e1ceF;
+ --bg:#080e1c;
+ --surface:#101a2c;
+ --surface2:#17243a;
+ --text:#f4f7fc;
+ --muted:#a5b2c5;
+ --accent:#43c7f4;
+ --accent2:#8b8cff;
+ --border:#263650;
+ --header:#080e1ceF;
  --shadow:0 15px 45px #0003;
 }
 [data-theme="light"] {
- --bg:#f5f8fd;--surface:#fff;--surface2:#eaf1fa;
- --text:#17243a;--muted:#627087;--accent:#087eae;
- --accent2:#5757c8;--border:#dce5f0;--header:#f5f8fdef;
+ --bg:#f5f8fd;
+ --surface:#ffffff;
+ --surface2:#eaf1fa;
+ --text:#17243a;
+ --muted:#627087;
+ --accent:#087eae;
+ --accent2:#5757c8;
+ --border:#dce5f0;
+ --header:#f5f8fdef;
  --shadow:0 15px 40px #18345412;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{
- background:var(--bg);color:var(--text);
- font-family:Inter,Arial,sans-serif;line-height:1.7;
+* {box-sizing:border-box;margin:0;padding:0}
+html {scroll-behavior:smooth;scroll-padding-top:90px}
+body {
+ background:var(--bg);
+ color:var(--text);
+ font-family:Inter,Arial,sans-serif;
+ line-height:1.7;
  transition:background .3s,color .3s;
 }
-a{color:inherit;text-decoration:none}
-button{font:inherit}
-.container{width:min(1120px,90%);margin:auto}
-header{
- position:sticky;top:0;z-index:100;
- background:var(--header);backdrop-filter:blur(15px);
+a {color:inherit;text-decoration:none}
+button {font:inherit}
+.container {width:min(1120px,90%);margin:auto}
+
+header {
+ position:sticky;
+ top:0;
+ z-index:100;
+ background:var(--header);
+ backdrop-filter:blur(15px);
  border-bottom:1px solid var(--border);
 }
-nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-.logo{font-size:25px;font-weight:900;color:var(--accent);letter-spacing:-1px}
-.navlinks{display:flex;align-items:center;gap:23px}
-.navlinks a{font-size:13px;color:var(--muted);font-weight:600}
-.navlinks a:hover{color:var(--accent)}
-.actions{display:flex;gap:9px;align-items:center}
-.icon-btn{
- width:40px;height:40px;border:1px solid var(--border);
- background:var(--surface);color:var(--text);
- border-radius:50%;cursor:pointer;
+nav {
+ min-height:76px;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:18px;
 }
-.menu-btn{display:none}
-.hero{
- position:relative;overflow:hidden;padding:100px 0 85px;
+.logo {
+ font-size:25px;
+ font-weight:900;
+ color:var(--accent);
+ letter-spacing:-1px;
+}
+.navlinks {display:flex;align-items:center;gap:20px}
+.navlinks a {
+ font-size:13px;
+ color:var(--muted);
+ font-weight:600;
+}
+.navlinks a:hover {color:var(--accent)}
+.actions {display:flex;gap:9px;align-items:center}
+.icon-btn {
+ width:40px;height:40px;
+ border:1px solid var(--border);
+ background:var(--surface);
+ color:var(--text);
+ border-radius:50%;
+ cursor:pointer;
+}
+.menu-btn {display:none}
+
+.hero {
+ position:relative;
+ overflow:hidden;
+ padding:100px 0 85px;
  background:radial-gradient(ellipse at 85% 30%,#268ec51c,transparent 45%);
 }
-.hero-grid{
- display:grid;grid-template-columns:1.2fr .8fr;
- align-items:center;gap:55px;
+.hero-grid {
+ display:grid;
+ grid-template-columns:1.2fr .8fr;
+ align-items:center;
+ gap:55px;
 }
-.eyebrow{
- display:inline-flex;align-items:center;gap:9px;
- color:var(--accent);font-size:12px;font-weight:800;
- letter-spacing:2.5px;text-transform:uppercase;
+.eyebrow {
+ display:inline-flex;
+ align-items:center;
+ gap:9px;
+ color:var(--accent);
+ font-size:12px;
+ font-weight:800;
+ letter-spacing:2.5px;
+ text-transform:uppercase;
 }
-.dot{width:8px;height:8px;border-radius:50%;background:#36d69a}
-h1{
+.dot {
+ width:8px;height:8px;
+ border-radius:50%;
+ background:#36d69a;
+ box-shadow:0 0 12px #36d69a;
+}
+h1 {
  font-size:clamp(40px,6vw,70px);
- line-height:1.08;letter-spacing:-2.5px;
- margin:22px 0 18px;font-weight:850;
+ line-height:1.08;
+ letter-spacing:-2.5px;
+ margin:22px 0 18px;
+ font-weight:850;
 }
-.gradient{
- background:linear-gradient(100deg,var(--accent),var(--accent2));
- -webkit-background-clip:text;background-clip:text;color:transparent;
+.gradient {
+ background:linear-gradient(100deg,var(--accent),var(--accent2),var(--accent));
+ background-size:200% auto;
+ -webkit-background-clip:text;
+ background-clip:text;
+ color:transparent;
+ animation:gradientMove 5s linear infinite;
 }
-.hero h2{font-size:19px;font-weight:600;margin-bottom:17px}
-.hero p{color:var(--muted);font-size:16px;max-width:610px}
-.btns{display:flex;flex-wrap:wrap;gap:13px;margin-top:30px}
-.btn{
- display:inline-flex;align-items:center;justify-content:center;
- gap:9px;padding:13px 21px;border-radius:8px;
- background:var(--accent);color:#07111d;font-weight:800;
- font-size:14px;transition:.25s;border:1px solid var(--accent);
+@keyframes gradientMove {
+ to {background-position:200% center}
 }
-.btn:hover{transform:translateY(-3px);box-shadow:0 10px 25px #38bdf430}
-.btn-outline{background:transparent;color:var(--accent)}
-.photo-area{position:relative;max-width:365px;margin:auto}
-.photo-frame{
- aspect-ratio:1;border-radius:28px;padding:9px;
+.typing-line {
+ min-height:65px;
+ font-size:clamp(17px,2.5vw,23px);
+ color:var(--accent);
+ font-weight:700;
+ line-height:1.4;
+ margin-bottom:17px;
+}
+.cursor {
+ display:inline-block;
+ color:var(--accent);
+ animation:blink .7s infinite;
+}
+@keyframes blink {50%{opacity:0}}
+.hero p {
+ color:var(--muted);
+ font-size:16px;
+ max-width:610px;
+}
+.btns {
+ display:flex;
+ flex-wrap:wrap;
+ gap:13px;
+ margin-top:30px;
+}
+.btn {
+ display:inline-flex;
+ align-items:center;
+ justify-content:center;
+ gap:9px;
+ padding:13px 21px;
+ border-radius:8px;
+ background:var(--accent);
+ color:#07111d;
+ font-weight:800;
+ font-size:14px;
+ transition:.25s;
+ border:1px solid var(--accent);
+}
+.btn:hover {
+ transform:translateY(-3px);
+ box-shadow:0 10px 25px #38bdf430;
+}
+.btn-outline {background:transparent;color:var(--accent)}
+
+.photo-area {
+ position:relative;
+ max-width:365px;
+ margin:auto;
+ animation:floatPhoto 5s ease-in-out infinite;
+}
+.photo-frame {
+ aspect-ratio:1;
+ border-radius:28px;
+ padding:9px;
  background:linear-gradient(140deg,var(--accent),var(--accent2));
- transform:rotate(3deg);box-shadow:0 20px 60px #0004;
+ transform:rotate(3deg);
+ box-shadow:0 20px 60px #0004;
 }
-.photo-frame img{
- width:100%;height:100%;object-fit:cover;
- border-radius:21px;display:block;transform:rotate(-3deg);
+.photo-frame img {
+ width:100%;
+ height:100%;
+ object-fit:cover;
+ border-radius:21px;
+ display:block;
+ transform:rotate(-3deg);
 }
-.photo-note{
- position:absolute;bottom:-22px;left:-25px;
- background:var(--surface);border:1px solid var(--border);
- border-radius:12px;padding:13px 18px;box-shadow:var(--shadow);
- font-size:13px;font-weight:700;
+.photo-note {
+ position:absolute;
+ bottom:-22px;
+ left:-25px;
+ background:var(--surface);
+ border:1px solid var(--border);
+ border-radius:12px;
+ padding:13px 18px;
+ box-shadow:var(--shadow);
+ font-size:13px;
+ font-weight:700;
 }
-.photo-note span{color:var(--accent)}
-section{padding:83px 0}
-.section-head{margin-bottom:30px}
-.section-head small{
- color:var(--accent);font-size:11px;
- font-weight:800;letter-spacing:3px;text-transform:uppercase;
+.photo-note span {color:var(--accent)}
+@keyframes floatPhoto {
+ 0%,100% {translate:0 0}
+ 50% {translate:0 -12px}
 }
-.section-head h2{font-size:clamp(28px,4vw,39px);line-height:1.2;margin-top:8px}
-.section-head p{margin-top:9px;color:var(--muted);max-width:650px}
-.about-box{
- background:var(--surface);border:1px solid var(--border);
- border-radius:16px;padding:30px;box-shadow:var(--shadow);
+
+section {padding:83px 0}
+.section-head {margin-bottom:30px}
+.section-head small {
+ color:var(--accent);
+ font-size:11px;
+ font-weight:800;
+ letter-spacing:3px;
+ text-transform:uppercase;
 }
-.about-box p{color:var(--muted);font-size:16px}
-.stats{
- display:grid;grid-template-columns:repeat(3,1fr);
- gap:15px;margin-top:20px;
+.section-head h2 {
+ font-size:clamp(28px,4vw,39px);
+ line-height:1.2;
+ margin-top:8px;
 }
-.stat{
- background:var(--surface);border:1px solid var(--border);
- padding:20px;border-radius:12px;text-align:center;
+.section-head p {
+ margin-top:9px;
+ color:var(--muted);
+ max-width:650px;
 }
-.stat strong{font-size:27px;color:var(--accent);display:block}
-.stat span{font-size:12px;color:var(--muted)}
-.expertise-grid,.project-grid{
- display:grid;grid-template-columns:repeat(2,1fr);gap:18px;
+.about-box {
+ background:var(--surface);
+ border:1px solid var(--border);
+ border-radius:16px;
+ padding:30px;
+ box-shadow:var(--shadow);
 }
-.card{
- background:var(--surface);border:1px solid var(--border);
- padding:25px;border-radius:14px;
- transition:.25s;box-shadow:var(--shadow);
+.about-box p {color:var(--muted);font-size:16px}
+
+.stats {
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:15px;
+ margin-top:20px;
 }
-.card:hover{transform:translateY(-5px);border-color:var(--accent)}
-.card-icon{
- width:47px;height:47px;display:grid;place-items:center;
- background:var(--surface2);border-radius:12px;
- font-size:22px;margin-bottom:17px;
+.stat {
+ background:var(--surface);
+ border:1px solid var(--border);
+ padding:20px;
+ border-radius:12px;
+ text-align:center;
 }
-.card h3{font-size:18px;margin-bottom:9px}
-.card p{color:var(--muted);font-size:14px}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-.tag{
- font-size:11px;padding:5px 10px;border-radius:20px;
- background:var(--surface2);color:var(--accent);
+.stat strong {
+ font-size:27px;
+ color:var(--accent);
+ display:block;
+}
+.stat span {font-size:12px;color:var(--muted)}
+
+.expertise-grid,.project-grid {
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:18px;
+}
+.card {
+ background:var(--surface);
+ border:1px solid var(--border);
+ padding:25px;
+ border-radius:14px;
+ box-shadow:var(--shadow);
+ transition:transform .35s,box-shadow .35s,border-color .35s;
+}
+.card:hover {
+ transform:translateY(-8px);
+ border-color:var(--accent);
+ box-shadow:0 18px 40px #38bdf425;
+}
+.card-icon {
+ width:47px;height:47px;
+ display:grid;
+ place-items:center;
+ background:var(--surface2);
+ border-radius:12px;
+ font-size:22px;
+ margin-bottom:17px;
+}
+.card h3 {font-size:18px;margin-bottom:9px}
+.card p {color:var(--muted);font-size:14px}
+.tags {
+ display:flex;
+ flex-wrap:wrap;
+ gap:8px;
+ margin-top:16px;
+}
+.tag {
+ font-size:11px;
+ padding:5px 10px;
+ border-radius:20px;
+ background:var(--surface2);
+ color:var(--accent);
  border:1px solid var(--border);
 }
-.skill-groups{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.skill-group{
- background:var(--surface);border:1px solid var(--border);
- padding:25px;border-radius:14px;
+
+.skill-groups {
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:20px;
 }
-.skill-group h3{margin-bottom:16px;font-size:18px}
-.skill-list{display:flex;flex-wrap:wrap;gap:9px}
-.skill{
- background:var(--surface2);border:1px solid var(--border);
- padding:8px 12px;border-radius:7px;font-size:13px;
+.skill-group {
+ background:var(--surface);
+ border:1px solid var(--border);
+ padding:25px;
+ border-radius:14px;
+ transition:transform .35s,box-shadow .35s;
 }
-.timeline{border-left:2px solid var(--accent);margin-left:9px;padding-left:25px}
-.timeline-item{position:relative;margin-bottom:22px}
-.timeline-item:before{
- content:"";position:absolute;left:-33px;top:27px;
- width:13px;height:13px;border-radius:50%;
- background:var(--accent);border:3px solid var(--bg);
+.skill-group:hover {
+ transform:translateY(-6px);
+ box-shadow:var(--shadow);
 }
-.date{font-size:12px;color:var(--accent);font-weight:800;letter-spacing:1px}
-.timeline-item h3{font-size:19px;margin:5px 0}
-.timeline-item p{font-size:14px;color:var(--muted)}
-.project-card{display:flex;flex-direction:column}
-.project-card .tags{margin-top:auto;padding-top:18px}
-.language-grid{
- display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
+.skill-group h3 {margin-bottom:16px;font-size:18px}
+.skill-list {display:flex;flex-wrap:wrap;gap:9px}
+.skill {
+ background:var(--surface2);
+ border:1px solid var(--border);
+ padding:8px 12px;
+ border-radius:7px;
+ font-size:13px;
+ transition:.25s;
 }
-.language{
- background:var(--surface);border:1px solid var(--border);
- border-radius:13px;padding:20px 10px;text-align:center;
+.skill:hover {color:var(--accent);border-color:var(--accent)}
+
+.project-card {
+ display:flex;
+ flex-direction:column;
 }
-.ring{
- width:85px;height:85px;margin:0 auto 12px;
- border-radius:50%;display:grid;place-items:center;
+.project-card .tags {margin-top:auto;padding-top:18px}
+.project-card:nth-child(1) {animation:cardFloat 5s ease-in-out infinite}
+.project-card:nth-child(2) {animation:cardFloat 6s ease-in-out infinite 1s}
+.project-card:nth-child(3) {animation:cardFloat 5.5s ease-in-out infinite 2s}
+@keyframes cardFloat {
+ 0%,100% {translate:0 0}
+ 50% {translate:0 -5px}
+}
+
+.timeline {
+ border-left:2px solid var(--accent);
+ margin-left:9px;
+ padding-left:25px;
+}
+.timeline-item {position:relative;margin-bottom:25px}
+.timeline-item:before {
+ content:"";
+ position:absolute;
+ left:-33px;
+ top:27px;
+ width:13px;height:13px;
+ border-radius:50%;
+ background:var(--accent);
+ border:3px solid var(--bg);
+}
+.date {
+ font-size:12px;
+ color:var(--accent);
+ font-weight:800;
+ letter-spacing:1px;
+}
+.timeline-item h3 {font-size:19px;margin:5px 0}
+.timeline-item p {font-size:14px;color:var(--muted)}
+
+.language-grid {
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:18px;
+}
+.language {
+ background:var(--surface);
+ border:1px solid var(--border);
+ border-radius:13px;
+ padding:20px 10px;
+ text-align:center;
+ transition:.3s;
+}
+.language:hover {transform:translateY(-7px);border-color:var(--accent)}
+.ring {
+ width:85px;height:85px;
+ margin:0 auto 12px;
+ border-radius:50%;
+ display:grid;
+ place-items:center;
  background:conic-gradient(var(--accent) var(--value),var(--surface2) 0);
  position:relative;
 }
-.ring:before{
- content:"";position:absolute;inset:7px;
- background:var(--surface);border-radius:50%;
+.ring:before {
+ content:"";
+ position:absolute;
+ inset:7px;
+ background:var(--surface);
+ border-radius:50%;
 }
-.ring strong{position:relative;font-size:17px}
-.language h3{font-size:14px}
-.language p{font-size:11px;color:var(--muted)}
-.contact-panel{
- padding:35px;border:1px solid var(--border);
- background:var(--surface);border-radius:17px;
+.ring strong {position:relative;font-size:17px}
+.language h3 {font-size:14px}
+.language p {font-size:11px;color:var(--muted)}
+
+.contact-panel {
+ padding:35px;
+ border:1px solid var(--border);
+ background:var(--surface);
+ border-radius:17px;
 }
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.contact-item{
- display:flex;align-items:center;gap:14px;
- padding:17px;border:1px solid var(--border);
- background:var(--surface2);border-radius:10px;
+.contact-grid {
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:14px;
+}
+.contact-item {
+ display:flex;
+ align-items:center;
+ gap:14px;
+ padding:17px;
+ border:1px solid var(--border);
+ background:var(--surface2);
+ border-radius:10px;
  overflow-wrap:anywhere;
 }
-.contact-icon{
- min-width:39px;height:39px;display:grid;
- place-items:center;border-radius:10px;
- background:var(--surface);font-size:18px;
+.contact-icon {
+ min-width:39px;
+ height:39px;
+ display:grid;
+ place-items:center;
+ border-radius:10px;
+ background:var(--surface);
+ font-size:18px;
 }
-.contact-item small{display:block;color:var(--muted);font-size:11px}
-.contact-item strong{font-size:13px}
-.contact-item a:hover{color:var(--accent)}
-footer{
+.contact-item small {
+ display:block;
+ color:var(--muted);
+ font-size:11px;
+}
+.contact-item strong {font-size:13px}
+.contact-item a:hover {color:var(--accent)}
+
+footer {
  border-top:1px solid var(--border);
- padding:27px 0;text-align:center;
- color:var(--muted);font-size:12px;
+ padding:27px 0;
+ text-align:center;
+ color:var(--muted);
+ font-size:12px;
 }
-.reveal{opacity:0;transform:translateY(20px);transition:.7s}
-.reveal.show{opacity:1;transform:translateY(0)}
-@media(max-width:800px){
- .navlinks{gap:12px}
- .navlinks a{font-size:11px}
- .hero-grid{grid-template-columns:1fr;gap:45px}
- .photo-area{width:230px;grid-row:1}
- .hero-content{text-align:center}
- .hero p{margin:auto}
- .btns{justify-content:center}
+.reveal {
+ opacity:0;
+ transform:translateY(20px);
+ transition:opacity .7s,transform .7s;
 }
-@media(max-width:600px){
- nav{height:auto;min-height:68px;flex-wrap:wrap;padding:12px 0}
- .menu-btn{display:inline-grid;place-items:center}
- .navlinks{
-  display:none;flex-direction:column;align-items:stretch;
-  width:100%;padding:12px 0 17px;gap:0;
+.reveal.show {opacity:1;transform:translateY(0)}
+
+@media(max-width:800px) {
+ .navlinks {gap:12px}
+ .navlinks a {font-size:11px}
+ .hero-grid {grid-template-columns:1fr;gap:45px}
+ .photo-area {width:230px;grid-row:1}
+ .hero-content {text-align:center}
+ .hero p {margin:auto}
+ .btns {justify-content:center}
+}
+@media(max-width:600px) {
+ nav {min-height:68px;flex-wrap:wrap;padding:12px 0}
+ .menu-btn {display:inline-grid;place-items:center}
+ .navlinks {
+  display:none;
+  flex-direction:column;
+  align-items:stretch;
+  width:100%;
+  padding:12px 0 17px;
+  gap:0;
  }
- .navlinks.open{display:flex}
- .navlinks a{padding:10px 5px;font-size:14px}
- .hero{padding:65px 0}
- h1{letter-spacing:-1.5px}
- section{padding:62px 0}
- .expertise-grid,.project-grid,.skill-groups{grid-template-columns:1fr}
- .stats{gap:8px}
- .stat{padding:13px 5px}
- .stat strong{font-size:21px}
- .stat span{font-size:10px}
- .language-grid{grid-template-columns:repeat(2,1fr)}
- .contact-grid{grid-template-columns:1fr}
- .contact-panel{padding:18px}
- .photo-note{left:-12px}
+ .navlinks.open {display:flex}
+ .navlinks a {padding:10px 5px;font-size:14px}
+ .hero {padding:65px 0}
+ h1 {letter-spacing:-1.5px}
+ section {padding:62px 0}
+ .expertise-grid,.project-grid,.skill-groups {grid-template-columns:1fr}
+ .stats {gap:8px}
+ .stat {padding:13px 5px}
+ .stat strong {font-size:21px}
+ .stat span {font-size:10px}
+ .language-grid {grid-template-columns:repeat(2,1fr)}
+ .contact-grid {grid-template-columns:1fr}
+ .contact-panel {padding:18px}
+ .photo-note {left:-12px}
+ .typing-line {min-height:58px}
 }
-@media(prefers-reduced-motion:reduce){
- *,*::before,*::after{scroll-behavior:auto!important;transition:none!important}
- .reveal{opacity:1;transform:none}
+
+@media(prefers-reduced-motion:reduce) {
+ *,*::before,*::after {
+  scroll-behavior:auto!important;
+  animation:none!important;
+  transition:none!important;
+ }
+ .reveal {opacity:1;transform:none}
 }
 </style>
 </head>
@@ -325,14 +515,15 @@ footer{
    <a class="logo" href="#home">MBA<span class="gradient">.</span></a>
    <div class="actions">
     <button class="icon-btn" id="themeBtn" aria-label="Switch theme">☀</button>
-    <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
    </div>
    <div class="navlinks" id="navlinks">
     <a href="#about">About</a>
     <a href="#expertise">Expertise</a>
     <a href="#skills">Skills</a>
-    <a href="#experience">Experience</a>
+    <a href="#experience">Projects</a>
     <a href="#education">Education</a>
+    <a href="#languages">Languages</a>
     <a href="#contact">Contact</a>
    </div>
   </nav>
@@ -346,26 +537,30 @@ footer{
  <div class="hero-grid">
   <div class="hero-content">
    <div class="eyebrow"><span class="dot"></span> COMPUTER SCIENCE PROFESSIONAL</div>
+
    <h1>Muhammad Bashir <span class="gradient">Alizada</span></h1>
-   
-<h2 class="typing-line">
-  <span id="typing"></span><span class="cursor">|</span>
-</h2>
+
+   <h2 class="typing-line">
+    <span id="typing"></span><span class="cursor">|</span>
+   </h2>
 
    <p>
-    Computer Science graduate with a background in Information Systems
-    and an interest in building organized, reliable and practical
-    technology solutions. Combining knowledge of databases,
-    software development, data management and project coordination.
+    Computer Science graduate specializing in Information Systems,
+    with knowledge of web development, database management,
+    data organization, software engineering and project coordination.
+    Interested in building practical, reliable and effective
+    technology solutions.
    </p>
+
    <div class="btns">
     <a class="btn" href="#experience">Explore My Work ↗</a>
     <a class="btn btn-outline" href="#contact">Let's Connect</a>
    </div>
   </div>
+
   <div class="photo-area">
    <div class="photo-frame">
-    <img src="profile.png" alt="Professional portrait of Muhammad Bashir Alizada">
+    <img src="profile.png" alt="Muhammad Bashir Alizada">
    </div>
    <div class="photo-note">📍 <span>Kabul, Afghanistan</span></div>
   </div>
@@ -378,6 +573,7 @@ footer{
   <h2>About <span class="gradient">Me</span></h2>
   <p>A professional overview of my background and interests.</p>
  </div>
+
  <div class="about-box reveal">
   <p>
    I am a Computer Science graduate specializing in Information Systems
@@ -390,6 +586,7 @@ footer{
    applying technical knowledge and delivering dependable solutions.
   </p>
  </div>
+
  <div class="stats reveal">
   <div class="stat"><strong>2026</strong><span>Graduation year</span></div>
   <div class="stat"><strong>3</strong><span>Featured projects / roles</span></div>
@@ -403,50 +600,62 @@ footer{
   <h2>Areas of <span class="gradient">Expertise</span></h2>
   <p>Key areas where I can contribute to teams and organizations.</p>
  </div>
+
  <div class="expertise-grid reveal">
+
   <article class="card">
-   <div class="card-icon">📊</div>
-   <h3>Project Management</h3>
-   <p>Project planning, requirements gathering, task coordination,
-   workflow organization, progress tracking, documentation and
-   quality assurance.</p>
-  </article>
-  <article class="card">
-   <div class="card-icon">📈</div>
-   <h3>Data & Reporting</h3>
-   <p>Data organization, validation, structured records, information
-   management, spreadsheet organization and reporting.</p>
-  </article>
-  <article class="card">
-   <div class="card-icon">🗄️</div>
-   <h3>Database Management</h3>
-   <p>MySQL, SQL, database design, tables and relationships,
-   CRUD operations and data retrieval.</p>
-  </article>
-  
-<article class="card">
-  <div class="card-icon">🌐</div>
-  <h3>Web Development</h3>
-  <p>
-    Frontend and backend web development using HTML,
-    CSS, JavaScript, React.js, PHP and Laravel.
-    Focused on responsive interfaces, application
-    development and practical digital solutions.
-  </p>
-  <div class="tags">
+   <div class="card-icon">🌐</div>
+   <h3>Web Development</h3>
+   <p>
+    Frontend and backend web development using HTML, CSS,
+    JavaScript, React.js, PHP and Laravel. Focused on responsive
+    interfaces, web applications and practical digital solutions.
+   </p>
+   <div class="tags">
     <span class="tag">Frontend</span>
     <span class="tag">Backend</span>
     <span class="tag">React.js</span>
     <span class="tag">Laravel</span>
-  </div>
-</article>
+   </div>
+  </article>
+
+  <article class="card">
+   <div class="card-icon">🗄️</div>
+   <h3>Database Management</h3>
+   <p>
+    MySQL, SQL, database design, tables and relationships,
+    CRUD operations, data retrieval and structured information management.
+   </p>
+  </article>
+
+  <article class="card">
+   <div class="card-icon">📊</div>
+   <h3>Project Management</h3>
+   <p>
+    Project planning, requirements gathering, task coordination,
+    workflow organization, progress tracking, documentation
+    and quality assurance.
+   </p>
+  </article>
+
+  <article class="card">
+   <div class="card-icon">📈</div>
+   <h3>Data & Reporting</h3>
+   <p>
+    Data organization, validation, structured records,
+    information management, spreadsheet organization and reporting.
+   </p>
+  </article>
 
   <article class="card">
    <div class="card-icon">💻</div>
    <h3>Software Engineering</h3>
-   <p>Object-oriented programming, systems analysis, debugging,
-   testing, documentation and problem solving.</p>
+   <p>
+    Object-oriented programming, systems analysis, debugging,
+    testing, documentation and problem solving.
+   </p>
   </article>
+
  </div>
 </section>
 
@@ -456,22 +665,32 @@ footer{
   <h2>Technical <span class="gradient">Skills</span></h2>
   <p>Tools, technologies and methods included in my professional CV.</p>
  </div>
+
  <div class="skill-groups reveal">
+
   <div class="skill-group">
-   <h3>Programming & Development</h3>
+   <h3>Programming & Web Development</h3>
    <div class="skill-list">
-    <span class="skill">Python</span><span class="skill">C</span>
-    <span class="skill">C++</span><span class="skill">C#</span>
-    <span class="skill">Java</span><span class="skill">HTML</span>
-    <span class="skill">CSS</span><span class="skill">JavaScript</span>
-    <span class="skill">PHP</span><span class="skill">Laravel</span>
-    <span class="skill">React.js</span><span class="skill">Tailwind CSS</span>
+    <span class="skill">HTML</span>
+    <span class="skill">CSS</span>
+    <span class="skill">JavaScript</span>
+    <span class="skill">React.js</span>
+    <span class="skill">Tailwind CSS</span>
+    <span class="skill">PHP</span>
+    <span class="skill">Laravel</span>
+    <span class="skill">Python</span>
+    <span class="skill">C</span>
+    <span class="skill">C++</span>
+    <span class="skill">C#</span>
+    <span class="skill">Java</span>
    </div>
   </div>
+
   <div class="skill-group">
-   <h3>Database & Data</h3>
+   <h3>Database & Data Management</h3>
    <div class="skill-list">
-    <span class="skill">MySQL</span><span class="skill">SQL</span>
+    <span class="skill">MySQL</span>
+    <span class="skill">SQL</span>
     <span class="skill">Database Design</span>
     <span class="skill">Tables & Relationships</span>
     <span class="skill">CRUD Operations</span>
@@ -480,6 +699,7 @@ footer{
     <span class="skill">Reporting</span>
    </div>
   </div>
+
   <div class="skill-group">
    <h3>Project Management</h3>
    <div class="skill-list">
@@ -492,8 +712,9 @@ footer{
     <span class="skill">Risk Identification</span>
    </div>
   </div>
+
   <div class="skill-group">
-   <h3>Office & Professional</h3>
+   <h3>Office & Software Engineering</h3>
    <div class="skill-list">
     <span class="skill">Microsoft Excel</span>
     <span class="skill">Microsoft Word</span>
@@ -501,9 +722,11 @@ footer{
     <span class="skill">OOP</span>
     <span class="skill">Systems Analysis</span>
     <span class="skill">Debugging</span>
+    <span class="skill">Testing</span>
     <span class="skill">Problem Solving</span>
    </div>
   </div>
+
  </div>
 </section>
 
@@ -513,7 +736,9 @@ footer{
   <h2>Experience & <span class="gradient">Projects</span></h2>
   <p>Selected systems and business experience from my CV.</p>
  </div>
+
  <div class="project-grid reveal">
+
   <article class="card project-card">
    <div class="card-icon">👥</div>
    <h3>Human Resource Information Management System (HRIMS)</h3>
@@ -529,6 +754,7 @@ footer{
     <span class="tag">Reporting</span>
    </div>
   </article>
+
   <article class="card project-card">
    <div class="card-icon">📦</div>
    <h3>Stationery Shop Management System</h3>
@@ -543,6 +769,7 @@ footer{
     <span class="tag">Data Management</span>
    </div>
   </article>
+
   <article class="card project-card">
    <div class="card-icon">💎</div>
    <h3>HKN Rhinestones — Business Owner</h3>
@@ -557,6 +784,7 @@ footer{
     <span class="tag">Customer Service</span>
    </div>
   </article>
+
  </div>
 </section>
 
@@ -565,6 +793,7 @@ footer{
   <small>05 / ACADEMIC BACKGROUND</small>
   <h2>My <span class="gradient">Education</span></h2>
  </div>
+
  <div class="timeline reveal">
   <div class="timeline-item">
    <div class="date">2022 — 2026</div>
@@ -572,6 +801,7 @@ footer{
    <p>Nangarhar University</p>
    <p>Faculty of Computer Science · Department of Information Systems</p>
   </div>
+
   <div class="timeline-item">
    <div class="date">2008 — 2021</div>
    <h3>High School Diploma</h3>
@@ -586,6 +816,7 @@ footer{
   <h2>Languages <span class="gradient">I Speak</span></h2>
   <p>Language proficiency levels as presented in my CV.</p>
  </div>
+
  <div class="language-grid reveal">
   <div class="language">
    <div class="ring" style="--value:99%"><strong>99%</strong></div>
@@ -612,28 +843,50 @@ footer{
   <h2>Let's Work <span class="gradient">Together</span></h2>
   <p>Open to professional opportunities, collaboration and meaningful projects.</p>
  </div>
+
  <div class="contact-panel reveal">
   <div class="contact-grid">
+
    <div class="contact-item">
     <div class="contact-icon">✉</div>
-    <div><small>Email</small>
-    <strong><a href="mailto:mb.alizada1@gmail.com">mb.alizada1@gmail.com</a></strong></div>
+    <div>
+     <small>Email</small>
+     <strong><a href="mailto:mb.alizada1@gmail.com">mb.alizada1@gmail.com</a></strong>
+    </div>
    </div>
+
    <div class="contact-item">
     <div class="contact-icon">☎</div>
-    <div><small>Phone / WhatsApp</small>
-    <strong><a href="https://wa.me/93776380570">+93 (0) 776 380 570</a></strong></div>
+    <div>
+     <small>Phone / WhatsApp</small>
+     <strong><a href="https://wa.me/93776380570">+93 (0) 776 380 570</a></strong>
+    </div>
    </div>
+
    <div class="contact-item">
     <div class="contact-icon">➤</div>
-    <div><small>Telegram</small>
-    <strong><a href="https://t.me/bashirkhanalizada" target="_blank" rel="noopener">t.me/bashirkhanalizada</a></strong></div>
+    <div>
+     <small>Telegram</small>
+     <strong><a href="https://t.me/bashirkhanalizada" target="_blank" rel="noopener">t.me/bashirkhanalizada</a></strong>
+    </div>
    </div>
+
    <div class="contact-item">
     <div class="contact-icon">⌘</div>
-    <div><small>GitHub</small>
-    <strong><a href="https://github.com/mdbashiralizada" target="_blank" rel="noopener">github.com/mdbashiralizada</a></strong></div>
+    <div>
+     <small>GitHub</small>
+     <strong><a href="https://github.com/mdbashiralizada" target="_blank" rel="noopener">github.com/mdbashiralizada</a></strong>
+    </div>
    </div>
+
+   <div class="contact-item">
+    <div class="contact-icon">📍</div>
+    <div>
+     <small>Location</small>
+     <strong>Karte Naw, 3rd Street, Kabul, Afghanistan</strong>
+    </div>
+   </div>
+
   </div>
  </div>
 </section>
@@ -648,100 +901,139 @@ footer{
 </footer>
 
 <script>
+"use strict";
+
+// Theme switcher
 const root = document.documentElement;
 const themeBtn = document.getElementById("themeBtn");
 const menuBtn = document.getElementById("menuBtn");
 const navlinks = document.getElementById("navlinks");
 
 let theme = "dark";
+
 try {
  theme = localStorage.getItem("mba-theme") || "dark";
 } catch(e) {}
 
-function applyTheme(value) {
- root.setAttribute("data-theme",value);
- themeBtn.textContent = value === "dark" ? "☀" : "☾";
- try { localStorage.setItem("mba-theme",value); } catch(e) {}
+if (theme !== "light" && theme !== "dark") {
+ theme = "dark";
 }
+
+function applyTheme(value) {
+ root.setAttribute("data-theme", value);
+ themeBtn.textContent = value === "dark" ? "☀" : "☾";
+ themeBtn.setAttribute(
+  "aria-label",
+  value === "dark" ? "Switch to light theme" : "Switch to dark theme"
+ );
+
+ try {
+  localStorage.setItem("mba-theme", value);
+ } catch(e) {}
+}
+
 applyTheme(theme);
 
-themeBtn.addEventListener("click",()=>{
+themeBtn.addEventListener("click", () => {
  theme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
  applyTheme(theme);
 });
 
-menuBtn.addEventListener("click",()=>{
- navlinks.classList.toggle("open");
+// Mobile navigation
+menuBtn.addEventListener("click", () => {
+ const isOpen = navlinks.classList.toggle("open");
+ menuBtn.setAttribute("aria-expanded", String(isOpen));
+ menuBtn.textContent = isOpen ? "✕" : "☰";
 });
 
-navlinks.querySelectorAll("a").forEach(link=>{
- link.addEventListener("click",()=>navlinks.classList.remove("open"));
+navlinks.querySelectorAll("a").forEach(link => {
+ link.addEventListener("click", () => {
+  navlinks.classList.remove("open");
+  menuBtn.setAttribute("aria-expanded", "false");
+  menuBtn.textContent = "☰";
+ });
 });
 
-document.getElementById("year").textContent = new Date().getFullYear();
+// Current year
+document.getElementById("year").textContent =
+ new Date().getFullYear();
 
+// Scroll reveal
 if ("IntersectionObserver" in window) {
- const observer = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-   if(entry.isIntersecting){
+ const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+   if (entry.isIntersecting) {
     entry.target.classList.add("show");
     observer.unobserve(entry.target);
    }
   });
- },{threshold:0.1});
- document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+ }, {threshold:0.1});
+
+ document.querySelectorAll(".reveal").forEach(el => {
+  observer.observe(el);
+ });
 } else {
- document.querySelectorAll(".reveal").forEach(el=>el.classList.add("show"));
+ document.querySelectorAll(".reveal").forEach(el => {
+  el.classList.add("show");
+ });
 }
- 
-// Professional typing animation
+
+// Typing animation
 const typingElement = document.getElementById("typing");
 
 const titles = [
-  "Web Development Specialist",
-  "Full-Stack Web Developer",
-  "Database Management Professional",
-  "Information Systems Graduate",
-  "Project Management & Coordination",
-  "Software Development Enthusiast",
-  "Data & Systems Analyst"
+ "Web Development Specialist",
+ "Full-Stack Web Developer",
+ "Database Management Professional",
+ "Information Systems Graduate",
+ "Project Management & Coordination",
+ "Software Development Enthusiast",
+ "Data & Systems Analyst"
 ];
 
 let titleIndex = 0;
 let characterIndex = 0;
 let deleting = false;
 
+const reducedMotion = window.matchMedia(
+ "(prefers-reduced-motion: reduce)"
+).matches;
+
 function typeAnimation() {
-  if (!typingElement) return;
+ if (!typingElement) return;
 
-  const currentTitle = titles[titleIndex];
+ if (reducedMotion) {
+  typingElement.textContent = titles[0];
+  return;
+ }
 
-  if (!deleting) {
-    characterIndex++;
-    typingElement.textContent =
-      currentTitle.substring(0, characterIndex);
+ const currentTitle = titles[titleIndex];
 
-    if (characterIndex === currentTitle.length) {
-      deleting = true;
-      setTimeout(typeAnimation, 1800);
-      return;
-    }
-  } else {
-    characterIndex--;
-    typingElement.textContent =
-      currentTitle.substring(0, characterIndex);
+ if (!deleting) {
+  characterIndex++;
+  typingElement.textContent =
+   currentTitle.substring(0, characterIndex);
 
-    if (characterIndex === 0) {
-      deleting = false;
-      titleIndex = (titleIndex + 1) % titles.length;
-    }
+  if (characterIndex === currentTitle.length) {
+   deleting = true;
+   setTimeout(typeAnimation, 1800);
+   return;
   }
+ } else {
+  characterIndex--;
+  typingElement.textContent =
+   currentTitle.substring(0, characterIndex);
 
-  setTimeout(typeAnimation, deleting ? 35 : 75);
+  if (characterIndex === 0) {
+   deleting = false;
+   titleIndex = (titleIndex + 1) % titles.length;
+  }
+ }
+
+ setTimeout(typeAnimation, deleting ? 35 : 75);
 }
 
 typeAnimation();
-
 </script>
 </body>
 </html>
